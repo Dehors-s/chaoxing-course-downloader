@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@import "tw-animate-css";
+
+/* 离线构建：不依赖 Google Fonts，用系统字体栈兜底（保持原设计的三档字体意图） */
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", "Noto Sans SC", "Microsoft YaHei UI", "PingFang SC", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Mono", "Consolas", monospace;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+.tk-window-font {
+  font-family: "Microsoft YaHei UI", var(--font-sans-cjk), var(--font-sans-latin), sans-serif;
+}
+
+.tk-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.tk-scrollbar::-webkit-scrollbar-track {
+  background: #F3F5F8;
+}
+
+.tk-scrollbar::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+  border: 2px solid #F3F5F8;
+}
+
+.tk-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+
+/* Windows 桌面端：交还给系统 ClearType 次像素渲染，避免 WebView2 下字体发虚 */
+html,
+body {
+  -webkit-font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* 桌面端整体字号微调：让 12px 级小字更易读（不影响浏览器预览） */
+html.cx-desktop {
+  font-size: 106.5%;
+}
