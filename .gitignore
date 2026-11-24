@@ -37,3 +37,7 @@ Desktop.ini
 npm-debug.log*
 tmp/
 temp/
+
+# Gemini 设计站残留
+metadata.json
+tsconfig.tsbuildinfo

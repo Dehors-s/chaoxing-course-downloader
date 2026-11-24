@@ -1,8 +1,0 @@
-{
-  "name": "学习通课程文件下载器 · Tk8.6 设计工作台",
-  "description": "面向 Python tkinter 8.6 Canvas 手绘约束的 1140×884 Windows 桌面端「学习通课程文件下载器」高保真交互原型、降级实现规范与可执行代码体系。",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
